@@ -7,6 +7,6 @@ import (
 )
 
 func Init(e *echo.Echo, bc *controllers.BookCnt) {
-	// Cost
+	// Book
 	e.POST("/book", bc.InsertBook)
 }

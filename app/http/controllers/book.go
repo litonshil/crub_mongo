@@ -15,10 +15,10 @@ type BookCnt struct {
 }
 
 func NewBookController(bookSvc domain.IBookSvc) *BookCnt {
-	costc := &BookCnt{
+	bookc := &BookCnt{
 		bookSvc: bookSvc,
 	}
-	return costc
+	return bookc
 }
 
 func (bc *BookCnt) InsertBook(c echo.Context) error {

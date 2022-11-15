@@ -25,7 +25,7 @@ var (
 	ErrRecordNotFound                   = errors.New("record not found")
 	ErrSendingEmail                     = errors.New("failed to send email")
 	ErrUserCreate                       = errors.New("failed to create user")
-	ErrBookCreate                       = errors.New("failed to insert daily cost")
+	ErrBookCreate                       = errors.New("failed to insert book")
 	ErrUserUpdate                       = errors.New("failed to update user")
 	ErrInvalidOtpNonce                  = errors.New("invalid otp nonce")
 	ErrInvalidOtp                       = errors.New("invalid otp")
