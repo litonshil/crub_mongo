@@ -4,7 +4,6 @@ import (
 	"context"
 	"crud_mongo/infra/config"
 	log "crud_mongo/infra/logger"
-	"fmt"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -15,8 +14,6 @@ var db *mongo.Client
 
 func ConnectDb() {
 	conf := config.Db()
-
-	log.Info("connecting to mysql at ", conf.Host, ":", conf.Port, "...")
 
 	client, err := mongo.NewClient(options.Client().ApplyURI(conf.ConnectionString))
 	if err != nil {
@@ -34,7 +31,6 @@ func ConnectDb() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Connected to MongoDB")
 
 	db = client
 

@@ -1,6 +1,10 @@
 package container
 
 import (
+	"crud_mongo/app/http/controllers"
+	"crud_mongo/app/http/routes"
+	repo "crud_mongo/app/repository"
+	svc "crud_mongo/app/service"
 	"crud_mongo/infra/conn"
 
 	"github.com/labstack/echo/v4"
@@ -8,15 +12,15 @@ import (
 
 func Init(e *echo.Echo) {
 
-	// db := conn.Db()
-	_ = conn.Db()
+	db := conn.Db()
+	// _ = conn.Db()
 
-	// costRepo := repo.NewCostRepository(db)
+	bookRepo := repo.NewCostRepository(db)
 
-	// costSvc := costsvc.NewCostService(costRepo)
+	bookSvc := svc.NewCostService(bookRepo)
 
-	// costCr := controllers.NewCostController(costSvc)
+	bookCr := controllers.NewCostController(bookSvc)
 
-	// routes.Init(e, costCr)
+	routes.Init(e, bookCr)
 
 }
