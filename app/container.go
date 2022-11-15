@@ -13,13 +13,12 @@ import (
 func Init(e *echo.Echo) {
 
 	db := conn.Db()
-	// _ = conn.Db()
 
-	bookRepo := repo.NewCostRepository(db)
+	bookRepo := repo.NewBookRepository(db)
 
-	bookSvc := svc.NewCostService(bookRepo)
+	bookSvc := svc.NewBookService(bookRepo)
 
-	bookCr := controllers.NewCostController(bookSvc)
+	bookCr := controllers.NewBookController(bookSvc)
 
 	routes.Init(e, bookCr)
 

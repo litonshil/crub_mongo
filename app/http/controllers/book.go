@@ -14,7 +14,7 @@ type BookCnt struct {
 	bookSvc domain.IBookSvc
 }
 
-func NewCostController(bookSvc domain.IBookSvc) *BookCnt {
+func NewBookController(bookSvc domain.IBookSvc) *BookCnt {
 	costc := &BookCnt{
 		bookSvc: bookSvc,
 	}

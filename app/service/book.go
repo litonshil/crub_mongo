@@ -14,7 +14,7 @@ type books struct {
 	bookRepo domain.IBookRepo
 }
 
-func NewCostService(bookRepo domain.IBookRepo) domain.IBookSvc {
+func NewBookService(bookRepo domain.IBookRepo) domain.IBookSvc {
 	return &books{
 		bookRepo: bookRepo,
 	}

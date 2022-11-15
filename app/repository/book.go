@@ -15,7 +15,7 @@ type books struct {
 	DB *mongo.Client
 }
 
-func NewCostRepository(dbc *mongo.Client) domain.IBookRepo {
+func NewBookRepository(dbc *mongo.Client) domain.IBookRepo {
 	return &books{
 		DB: dbc,
 	}
